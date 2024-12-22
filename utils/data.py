@@ -4,7 +4,7 @@ import re
 import urllib.request
 import torch
 from torch.utils.data import Dataset, DataLoader
-from datasets import load_dataset
+from dataset_processors import load_dataset
 
 # Downloading text data
 def download_alice_wonderland_txt_data():

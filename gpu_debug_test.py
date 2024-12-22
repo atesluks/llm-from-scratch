@@ -47,6 +47,7 @@ def train(device, model, X, y, epochs=5):
 
 # Main function
 def main():
+    print(f"PyTorch version: {torch.__version__}")
     # Generate data
     X, y = generate_data()
 
@@ -58,11 +59,14 @@ def main():
     train(torch.device('cpu'), model, X, y)
 
     # Train on GPU if available
+    print(f"CUDA available: {torch.cuda.is_available()}")
+    print(f"CUDA version: {torch.version.cuda if torch.cuda.is_available() else 'N/A'}")    
     if torch.cuda.is_available():
+        print(f"Number of GPUs: {torch.cuda.device_count()}")
         print("\n--- Training on CUDA (GPU) ---")
         train(torch.device('cuda'), model, X, y)
     else:
-        print("\nCUDA is not available. Please ensure you have a compatible GPU and drivers installed.")
+        print("\nCUDA is not available. Please ensure you have a compatible GPU and drivers installed. Check if pytorch version is CPU only")
 
 if __name__ == "__main__":
     main()

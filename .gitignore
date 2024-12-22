@@ -21,3 +21,5 @@ alice-wonderland.txt
 
 # Documentation and plots
 *.pdf
+
+corpuses/
