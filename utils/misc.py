@@ -9,8 +9,7 @@ def print_lib_versions():
     pkgs = ["matplotlib", 
         "numpy", 
         "tiktoken", 
-        "torch",
-        "tensorflow" # For OpenAI's pretrained weights
+        "torch"
        ]
     for p in pkgs:
         print(f"{p} version: {version(p)}")
